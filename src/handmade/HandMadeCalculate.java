@@ -27,20 +27,26 @@ public class HandMadeCalculate {
 		final int bRows = m2[0].length;
 
 		double m2T[][] = new double[bColumns][bRows];
-		for (int i = 0; i < bRows; i++) {
-			for (int j = 0; j < bColumns; j++) {
-				m2T[j][i] = m2[i][j];
-			}
-		}
 
-		for (int i = 0; i < aRows; i++) {
-			for (int j = 0; j < aColumns; j++) {
-				double summand = 0.0;
-				for (int k = 0; k < bColumns; k++) {
-					summand += m1[i][k] * m2T[j][k];
+		try {
+			for (int i = 0;; i++) {
+				for (int j = 0; j < bColumns; j++) {
+					m2T[j][i] = m2[i][j];
 				}
-				result[i][j] = summand;
 			}
+		} catch (Exception e) {
+		}
+		try {
+			for (int i = 0;; i++) {
+				for (int j = 0; j < aColumns; j++) {
+					double summand = 0.0;
+					for (int k = 0; k < bColumns; k++) {
+						summand += m1[i][k] * m2T[j][k];
+					}
+					result[i][j] = summand;
+				}
+			}
+		} catch (Exception e) {
 		}
 		return result;
 	}
