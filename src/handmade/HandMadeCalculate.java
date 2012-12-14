@@ -8,7 +8,7 @@ import util.Utils;
 public class HandMadeCalculate {
 	static double[][] matrix1;
 	static double[][] matrix2;
-	private static final int THRESHOLD = 8;
+	private static final int THRESHOLD = 128;
 	static ForkJoinPool forkJoinPool;
 
 	public static long init(int n1, int n2) {
@@ -29,9 +29,6 @@ public class HandMadeCalculate {
 		MatrixMultiplyTask mainTask = new MatrixMultiplyTask(m1, 0, 0, m2, 0, 0, result, 0, 0, m1.length);
         forkJoinPool = new ForkJoinPool();
         forkJoinPool.invoke(mainTask);
-
-        System.out.println("Terminated!");
-		 
 		return result;
 	}
 	private static class MatrixMultiplyTask extends RecursiveAction {
