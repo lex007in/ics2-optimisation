@@ -22,7 +22,7 @@ public class Main {
 		System.out.println("---------------------------------------");
 		System.out.println("HandMade library test:");
 		System.out.println("Initialisation:");
-		System.out.println(HandMadeCalculate.init(LENGTH, LENGTH));
+		System.out.println(HandMadeCalculate.init(LENGTH));
 		System.out.println("Calculation:");
 		System.out.println(HandMadeCalculate.calculate());
 		System.out.println("---------------------------------------");
